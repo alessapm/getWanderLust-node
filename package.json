@@ -1,0 +1,25 @@
+{
+  "name": "get-wanderlust",
+  "version": "1.0.0",
+  "description": "node.js side of getWanderLust travel app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alessa Messineo",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "method-override": "^2.3.7",
+    "morgan": "^1.8.1",
+    "node-fetch": "^1.6.3",
+    "passport": "^0.3.2",
+    "passport-instagram": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^5.6.4"
+  }
+}
