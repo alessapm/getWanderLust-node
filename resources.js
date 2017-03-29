@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 
-router.get('/users', require('./controllers/users'));
-router.get('explore', require('./controllers/explore_lists'));
+router.use('/users', require('./controllers/users'));
+router.use('/explore', require('./controllers/explore_lists'));
 
 module.exports = router

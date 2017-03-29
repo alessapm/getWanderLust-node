@@ -1,6 +1,9 @@
 const User = require('../../models/user.js');
 const bcrypt = require('bcrypt');
 
+const jwt = require('jsonwebtoken');
+const myToken = process.env.myToken
+
 
 const controller = {};
 
@@ -20,6 +23,7 @@ controller.create = (req, res) => {
       if (isAuthed) {
         console.log('isAuthed is true');
         // set up JWT token here.
+        const token = jwt.sign({user.email}, myToken, {expiresIn: "10d"});
       }
     } else {
       console.log('cannot find matching email');

@@ -6,11 +6,12 @@ const controller = {};
 
 //send request to GettyImages API
 controller.indexGetty = (req, res) => {
-  GettyImages.search(req.body.city)
+  console.log('made it inside Getty');
+  GettyImages.search(req.params.city)
   // translate response into json
   .then(response => response.json()
     .then((data) => {
-      console.log('indexGetty data: ', data);
+      console.log('indexGetty data is returned');
       // API response object has result_count and images keys
       res.send(data.images)
     })
@@ -20,10 +21,10 @@ controller.indexGetty = (req, res) => {
 
 //send request to Yelp API
 controller.indexYelp = (req, res) => {
-  Yelp.search(req.body.city)
+  Yelp.search(req.params.city)
   .then(response => response.json()
     .then((data) => {
-      console.log('yelp data: ', data);
+      // console.log('yelp data: ', data);
       res.send(data.businesses)
     }))
   .catch(err => console.log(err));
