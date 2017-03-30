@@ -39,10 +39,11 @@ controller.create = (req, res) => {
       } else {
         console.log('isAuthed is false');
         res.status(401)
+        .json({error: "Incorrect email or password"})
       }
     } else {
       console.log('cannot find matching email');
-      res.json({error: "Email or password not found"})
+      res.json({error: "Incorrect email or password"})
     }
   })
  }; //closes process_login
