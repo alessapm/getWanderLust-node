@@ -34,6 +34,7 @@ controller.indexYelp = (req, res) => {
 
 //add a city to a user's explore_list
 controller.create = (req, res) => {
+  console.log('req.body: ', req.body)
   ExploreList.create(req.body.city, req.params.user_id)
   .then(() => {
     console.log('create explore list item is working');
