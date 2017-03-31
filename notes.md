@@ -23,3 +23,10 @@ load on dashboard)
 (user_id, photo_location, url)
 
 
+pink: #FF8686
+ navyish rgb(37,3,94)
+cornfeild ish- rgb(253,213,51)
+
+
+font-family: 'Pacifico', cursive;
+font-family: 'Maven Pro', sans-serif;

@@ -18,7 +18,6 @@ app.use(methodOverride('_method'));
 
 require('dotenv').config();
 
-//NEED TO ADD JWT    !!!!!!
 
 app.use(require('./resources.js'));
 
