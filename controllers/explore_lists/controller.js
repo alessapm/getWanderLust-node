@@ -1,6 +1,7 @@
 const ExploreList = require('../../models/explore_list.js');
 const GettyImages = require('../../services/getty_images.js');
 const Yelp = require('../../services/yelp.js');
+const Details = require('../../models/details.js');
 
 const controller = {};
 
@@ -47,7 +48,13 @@ controller.create = (req, res) => {
 controller.show = (req, res) => {
   ExploreList.findAllByUserId(req.params.user_id)
   .then((data) => {
-    res.send(data);
+    //*********then send data in request to Details.findDetails***********
+    console.log('show data: ', data)
+    Details.findDetails(data)
+    .then((finalData) => {
+      console.log('finalData: ', finalData);
+      res.send(finalData)
+    })
   })
   .catch((err) => console.log('show err: ', err))
 };
