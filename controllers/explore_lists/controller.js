@@ -49,12 +49,10 @@ controller.show = (req, res) => {
   ExploreList.findAllByUserId(req.params.user_id)
   .then((data) => {
     //*********then send data in request to Details.findDetails***********
-    console.log('show data: ', data)
-    Details.findDetails(data)
-    .then((finalData) => {
-      console.log('finalData: ', finalData);
-      res.send(finalData)
-    })
+    // console.log('show data: ', data)
+    const finalData = Details.findDetails(data);
+    res.send(finalData);
+
   })
   .catch((err) => console.log('show err: ', err))
 };
