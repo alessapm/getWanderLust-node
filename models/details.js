@@ -115,6 +115,16 @@ const cities = {
   melbourne: {
     country: "Australia",
     region: "Oceania"
+  },
+
+  phoenix: {
+    country: "USA",
+    region: "North America"
+  },
+
+  rome: {
+    country: "Italy",
+    region: "Europe"
   }
 
 } //closes cities
@@ -127,11 +137,15 @@ Details.findDetails = (arrCities) => {
    let citiesDetails = [];
 
   arrCities.forEach((city) => {
+
     if (cities[city.city_name.toLowerCase()]) {
       let place = {
         city_name: city.city_name,
         country: cities[city.city_name.toLowerCase()].country,
-        region: cities[city.city_name.toLowerCase()].region
+        region: cities[city.city_name.toLowerCase()].region,
+        city_id: city.id,
+        population: cities[city.city_name.toLowerCase()].population,
+        language: cities[city.city_name.toLowerCase().language]
       };
 
       citiesDetails.push(place);
