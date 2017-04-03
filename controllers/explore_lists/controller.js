@@ -25,10 +25,10 @@ controller.indexYelp = (req, res) => {
   Yelp.search(req.params.city)
   .then(response => response.json()
     .then((data) => {
-      // console.log('yelp data: ', data);
+      console.log('yelp data: ', data);
       res.send(data.businesses)
     }))
-  .catch(err => console.log(err));
+  .catch(err => console.log('hello', err));
 };
 
 
@@ -48,8 +48,7 @@ controller.create = (req, res) => {
 controller.show = (req, res) => {
   ExploreList.findAllByUserId(req.params.user_id)
   .then((data) => {
-    //*********then send data in request to Details.findDetails***********
-    // console.log('show data: ', data)
+
     const finalData = Details.findDetails(data);
     res.send(finalData);
 
@@ -58,14 +57,15 @@ controller.show = (req, res) => {
 };
 
 //update an explore_list item (priority?)
-controller.update = (req, res) => {
-  ExploreList.update(req.body.explore_list.priority, req.params.explore_id)
-  .then(() => {
-    console.log('explorelist controller update is working');
-    res.sendStatus(200);
-  })
-  .catch()
-};
+// controller.update = (req, res) => {
+//   ExploreList.update(req.body.explore_list.priority, req.params.explore_id)
+//   .then(() => {
+//     console.log('explorelist controller update is working');
+//     res.sendStatus(200);
+//   })
+//   .catch()
+// };
+
 
 //delete an explore_list item
 controller.destroy = (req, res) => {
