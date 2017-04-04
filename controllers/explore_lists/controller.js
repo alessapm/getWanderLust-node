@@ -56,7 +56,7 @@ controller.show = (req, res) => {
   .catch((err) => console.log('show err: ', err))
 };
 
-//update an explore_list item (priority?)
+
 // controller.update = (req, res) => {
 //   ExploreList.update(req.body.explore_list.priority, req.params.explore_id)
 //   .then(() => {
