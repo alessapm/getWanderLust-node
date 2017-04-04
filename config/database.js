@@ -1,11 +1,9 @@
 // database is called get_wanderlust
 
-const pgPromise = require('pg-promise')();
+const pgp = require('pg-promise')();
 
-const db = pgPromise({
-  host: 'localhost',
-  port: 5432,
-  database: 'get_wanderlust'
-});
+const localconnection = process.env.DATABASE_URL || 'postgres://localhost:5432/get_wanderlust';
+
+const db = pgp(localconnection);
 
 module.exports = db;
